@@ -274,6 +274,138 @@ code/
    python 查看数据库状态.py
    ```
 
+## GitHub 代码管理
+
+### 首次上传代码到 GitHub
+
+```bash
+# 1. 初始化 Git 仓库（如果还没有初始化）
+git init
+
+# 2. 添加远程仓库
+git remote add origin https://github.com/NICECJ/Campus-Stray-Animal-Lifecycle-Management-Platform.git
+
+# 3. 添加所有文件到暂存区
+git add .
+
+# 4. 提交代码
+git commit -m "Initial commit: 高校流浪动物全生命周期管理平台"
+
+# 5. 推送到 GitHub（首次推送）
+git push -u origin main
+```
+
+### 日常更新代码到 GitHub
+
+```bash
+# 1. 查看修改的文件
+git status
+
+# 2. 添加修改的文件到暂存区
+git add .
+
+# 3. 提交修改（填写有意义的提交信息）
+git commit -m "描述你的修改内容"
+
+# 4. 推送到 GitHub
+git push origin main
+```
+
+### 常用 Git 命令
+
+```bash
+# 查看提交历史
+git log
+
+# 查看远程仓库信息
+git remote -v
+
+# 拉取最新代码
+git pull origin main
+
+# 创建新分支
+git checkout -b feature/new-feature
+
+# 切换分支
+git checkout main
+
+# 合并分支
+git merge feature/new-feature
+
+# 查看分支
+git branch -a
+```
+
+### .gitignore 配置
+
+确保项目根目录有 `.gitignore` 文件，避免上传敏感信息和不必要的文件：
+
+```gitignore
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+
+# 配置文件（包含敏感信息）
+backend/config.py
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 构建输出
+dist/
+build/
+*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+
+# 环境变量
+.env
+.env.local
+```
+
+### 提交信息规范
+
+建议使用以下格式编写提交信息：
+
+- `feat: 添加新功能` - 新功能
+- `fix: 修复bug` - 修复问题
+- `docs: 更新文档` - 文档更新
+- `style: 代码格式调整` - 代码格式（不影响功能）
+- `refactor: 代码重构` - 重构代码
+- `perf: 性能优化` - 性能优化
+- `test: 添加测试` - 测试相关
+- `chore: 构建/工具变动` - 构建工具或辅助工具的变动
+
+示例：
+```bash
+git commit -m "feat: 添加动物相册功能"
+git commit -m "fix: 修复医疗记录时间格式显示问题"
+git commit -m "docs: 更新README安装说明"
+```
+
 ## 注意事项
 
 1. 请确保华为云 openGauss 数据库实例正常运行
@@ -281,4 +413,5 @@ code/
 3. 确保安全组规则允许访问数据库端口
 4. 生产环境请修改 Flask 的 SECRET_KEY
 5. 建议使用 HTTPS 协议保护用户数据安全
-6. 不要将 config.py 提交到版本控制系统
+6. **重要：不要将 config.py 提交到 GitHub（已在 .gitignore 中配置）**
+7. 上传代码前请检查是否包含敏感信息（密码、密钥等）
