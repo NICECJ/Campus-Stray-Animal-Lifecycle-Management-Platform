@@ -12,7 +12,7 @@
       <el-empty v-if="logs.length === 0" description="暂无数据" />
       
       <el-table v-else :data="logs" style="width: 100%" stripe>
-        <el-table-column prop="log_id" label="ID" width="80" />
+        <el-table-column type="index" label="序号" width="80" :index="(index) => index + 1" />
         <el-table-column prop="animal_name" label="动物" />
         <el-table-column prop="action_type" label="类型" />
         <el-table-column prop="cost" label="费用(元)" />

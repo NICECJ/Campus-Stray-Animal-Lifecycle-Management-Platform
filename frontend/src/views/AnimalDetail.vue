@@ -10,8 +10,7 @@
       </div>
       
       <el-descriptions :column="2" border style="margin-top: 20px">
-        <el-descriptions-item label="ID">{{ animal.animal_id }}</el-descriptions-item>
-        <el-descriptions-item label="昵称">
+        <el-descriptions-item label="昵称" :span="2">
           <strong style="font-size: 16px">{{ animal.name }}</strong>
         </el-descriptions-item>
         <el-descriptions-item label="物种">{{ animal.species }}</el-descriptions-item>

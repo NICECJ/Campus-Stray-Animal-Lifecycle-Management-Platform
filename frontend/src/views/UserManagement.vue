@@ -15,13 +15,11 @@
           clearable
           class="search-input"
           @input="handleSearch"
-          @clear="resetSearch">
-          <template #prefix>
-            <el-icon><Search /></el-icon>
-          </template>
+          @clear="resetSearch"
+          @keyup.enter="handleSearch">
         </el-input>
-        <el-button type="primary" @click="handleSearch" icon="Search">搜索</el-button>
-        <el-button @click="resetSearch" icon="Refresh">重置</el-button>
+        <el-button type="primary" @click="handleSearch" icon="Search">搜 索</el-button>
+        <el-button @click="resetSearch" icon="Refresh">重 置</el-button>
         <span style="margin-left: 20px; color: #909399; font-size: 14px">
           共 {{ filteredUsers.length }} 个用户
         </span>
@@ -30,7 +28,7 @@
       <el-empty v-if="filteredUsers.length === 0" description="暂无数据" />
       
       <el-table v-else :data="filteredUsers" style="width: 100%" stripe>
-        <el-table-column prop="user_id" label="ID" width="80" />
+        <el-table-column type="index" label="序号" width="80" :index="(index) => index + 1" />
         <el-table-column prop="username" label="用户名" width="150">
           <template #default="{ row }">
             <strong>{{ row.username }}</strong>
@@ -196,10 +194,28 @@ onMounted(() => {
 .search-input {
   width: 350px;
 }
+.search-input :deep(.el-input__wrapper) {
+  padding: 8px 15px;
+}
 .search-input :deep(.el-input__inner) {
   text-align: center;
+  font-size: 14px;
 }
-.search-input :deep(.el-input__prefix) {
-  left: 15px;
+.search-input :deep(.el-input__inner::placeholder) {
+  text-align: center;
+}
+.search-bar :deep(.el-button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+}
+.search-bar :deep(.el-button .el-icon) {
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.search-bar :deep(.el-button span) {
+  display: inline-flex;
+  align-items: center;
 }
 </style>

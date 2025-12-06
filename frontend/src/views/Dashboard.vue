@@ -30,7 +30,7 @@
           <h3>动物累计花费排行</h3>
           <el-empty v-if="animalCosts.length === 0" description="暂无数据" />
           <el-table v-else :data="animalCosts" style="width: 100%" stripe>
-            <el-table-column prop="animal_id" label="ID" width="80" />
+            <el-table-column type="index" label="序号" width="80" :index="(index) => index + 1" />
             <el-table-column prop="name" label="动物名称" />
             <el-table-column prop="total_cost" label="累计花费(元)" />
           </el-table>

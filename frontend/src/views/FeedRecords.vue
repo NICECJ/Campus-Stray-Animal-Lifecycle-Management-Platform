@@ -13,7 +13,7 @@
       <el-empty v-if="records.length === 0" description="暂无数据" />
       
       <el-table v-else :data="records" style="width: 100%" stripe>
-        <el-table-column prop="record_id" label="ID" width="80" />
+        <el-table-column type="index" label="序号" width="80" :index="(index) => index + 1" />
         <el-table-column prop="animal_name" label="动物" width="120">
           <template #default="{ row }">
             <strong>{{ row.animal_name }}</strong>
