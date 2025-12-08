@@ -1,7 +1,10 @@
 <template>
   <el-container class="layout-container">
     <el-aside width="200px">
-      <div class="logo">流浪动物管理</div>
+      <div class="logo-container">
+        <img src="/logo.png" alt="福州大学校徽" class="school-logo" />
+        <div class="logo-text">福大流浪动物管理</div>
+      </div>
       <el-menu :default-active="$route.path" router>
         <el-menu-item index="/animals">
           <span>动物档案</span>
@@ -66,13 +69,25 @@ const handleLogout = () => {
   background-color: rgb(102, 117, 134);
   color: #fff;
 }
-.logo {
-  height: 60px;
-  line-height: 60px;
+.logo-container {
+  background-color: rgb(163, 198, 238);
+  padding: 20px 10px;
   text-align: center;
-  font-size: 18px;
+}
+
+.school-logo {
+  width: 150px;
+  height: 60px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  display: block;
+}
+
+.logo-text {
+  font-size: 20px;
   font-weight: bold;
-  background-color:rgb(163, 198, 238);
+  color: #fff;
+  line-height: 1.4;
 }
 .el-menu {
   border: none;

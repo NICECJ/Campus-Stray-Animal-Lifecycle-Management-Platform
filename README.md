@@ -1,8 +1,8 @@
-# 高校流浪动物全生命周期管理平台
+# 福州大学流浪动物全生命周期管理平台
 
 ## 项目简介
 
-本项目是一个基于 Vue 3 + Flask + openGauss 的高校流浪动物管理系统，实现了从发现、建档、投喂、医疗到领养的全生命周期数字化管理。
+本项目是一个基于 Vue 3 + Flask + openGauss 的福州大学流浪动物管理系统，实现了从发现、建档、投喂、医疗到领养的全生命周期数字化管理。
 
 ## 技术栈
 
@@ -289,12 +289,11 @@ git remote add origin https://github.com/NICECJ/Campus-Stray-Animal-Lifecycle-Ma
 git add .
 
 # 4. 提交代码
-git commit -m "Initial commit: 高校流浪动物全生命周期管理平台"
+git commit -m "Initial commit: 福州大学流浪动物全生命周期管理平台"
 
 # 5. 推送到 GitHub（首次推送）
 git push -u origin main
 ```
-
 ### 日常更新代码到 GitHub
 
 ```bash

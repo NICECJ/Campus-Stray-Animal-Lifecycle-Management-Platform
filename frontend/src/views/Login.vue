@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
     <el-card class="login-card">
-      <h2>高校流浪动物管理平台</h2>
+      <h2>福州大学流浪动物管理平台</h2>
       <el-form :model="form" :rules="rules" ref="formRef">
         <el-form-item prop="username">
           <el-input v-model="form.username" placeholder="用户名/学号" />
